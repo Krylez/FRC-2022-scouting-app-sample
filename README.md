@@ -8,3 +8,5 @@ The app utilizes Square's [Retrofit](https://square.github.io/retrofit/) to fetc
 Data is cached locally through Google's [Room](https://developer.android.com/jetpack/androidx/releases/room), allowing the app to function even without a network connection.
 
 Dependency Injection is handled with Google's [Hilt](https://developer.android.com/training/dependency-injection/hilt-android).
+
+NOTE: You'll need to add your own API key for The Blue Alliance to `AuthInterceptor.kt` or nothing will work.
