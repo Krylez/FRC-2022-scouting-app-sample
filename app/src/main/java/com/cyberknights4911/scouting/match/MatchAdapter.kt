@@ -35,7 +35,15 @@ class MatchAdapter(
             binding.root.setOnClickListener {
                 clickListener.onClick(matchWithTeams)
             }
-            binding.matchNumber.text = "${matchWithTeams.compLevel} ${matchWithTeams.matchNumber}"
+            binding.matchLevel.text = when (matchWithTeams.compLevel) {
+                "f" -> "Final"
+                "qm" -> "Qualifier"
+                "qf" -> "Quarterfinal"
+                "sf" -> "Semifinal"
+                "ef" -> "Elimination"
+                else -> "Unknown"
+            }
+            binding.matchLabel.text = "Match ${matchWithTeams.matchNumber} Set ${matchWithTeams.setNumber}"
             binding.matchBlueAlliance.text = matchWithTeams.blueTeams.map {
                 it.teamNumber
             }.joinToString(", ")

@@ -8,7 +8,7 @@
 
 
     <dimen name="match_team_size">24sp</dimen>
-    <dimen name="match_number_size">24sp</dimen>
+    <dimen name="match_number_size">18sp</dimen>
 
     <dimen name="logo_size">48dp</dimen>
     <dimen name="start_position_button_size">120dp</dimen>

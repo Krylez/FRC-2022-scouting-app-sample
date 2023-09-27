@@ -61,4 +61,7 @@
     <color name="md_theme_dark_surfaceTint">#FFB3B0</color>
     <color name="md_theme_dark_outlineVariant">#534342</color>
     <color name="md_theme_dark_scrim">#000000</color>
+
+    <color name="blue_alliance">#ff33b5e5</color>
+    <color name="red_alliance">#ffff4444</color>
 </resources>

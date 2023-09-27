@@ -8,15 +8,27 @@
     android:background="?android:attr/selectableItemBackground">
 
     <TextView
-        android:id="@+id/match_number"
+        android:id="@+id/match_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:textSize="@dimen/match_number_size"
+        app:layout_constraintStart_toStartOf="@id/match_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/match_label"
+        tools:text="Qualifier" />
+
+    <TextView
+        android:id="@+id/match_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
         android:textSize="@dimen/match_number_size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:text="15" />
+        app:layout_constraintTop_toBottomOf="@id/match_level"
+        app:layout_constraintBottom_toTopOf="@id/divider"
+        tools:text="Match 3 Set 2" />
 
     <TextView
         android:id="@+id/match_red_alliance"
@@ -24,10 +36,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
         android:textSize="@dimen/match_team_size"
-        android:textColor="@android:color/holo_red_light"
+        android:textColor="@color/red_alliance"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/match_number"
+        app:layout_constraintEnd_toStartOf="@id/match_level"
         app:layout_constraintHorizontal_bias="0.0"
         tools:text="all red teams" />
 
@@ -37,14 +49,15 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
         android:textSize="@dimen/match_team_size"
-        android:textColor="@android:color/holo_blue_light"
+        android:textColor="@color/blue_alliance"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/match_red_alliance"
-        app:layout_constraintEnd_toStartOf="@id/match_number"
+        app:layout_constraintEnd_toStartOf="@id/match_level"
         app:layout_constraintHorizontal_bias="0.0"
         tools:text="all blue teams" />
 
     <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"

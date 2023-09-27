@@ -4,8 +4,10 @@ import android.util.Base64
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.compose.ui.res.colorResource
 import androidx.recyclerview.widget.ListAdapter
 import com.bumptech.glide.RequestManager
+import com.cyberknights4911.scouting.R
 import com.cyberknights4911.scouting.database.Team
 import com.cyberknights4911.scouting.databinding.TeamItemDialogBinding
 import java.lang.Integer.max
@@ -89,19 +91,21 @@ class TeamAdapter(
             binding.root.setOnClickListener {
                 teamListener.onClick(teamWithLogo)
             }
-            // even is red, odd is blue
-            binding.root.setBackgroundResource(
-                if (position % 2 == 0) {
-                    android.R.color.holo_red_light
-                } else {
-                    android.R.color.holo_blue_light
-                }
-            )
             if (!teamWithLogo.logo.isNullOrEmpty()) {
                 requestManager
                     .load(Base64.decode(teamWithLogo.logo, Base64.DEFAULT))
                     .into(binding.logo)
             }
+            // even is red, odd is blue
+            val color = with (binding.root.context) {
+                if (position % 2 == 0) {
+                    getColor(R.color.red_alliance)
+                } else {
+                    getColor(R.color.blue_alliance)
+                }
+            }
+            binding.number.setTextColor(color)
+            binding.nickname.setTextColor(color)
             binding.number.text = teamWithLogo.team.teamNumber.toString()
             binding.nickname.text = teamWithLogo.team.nickname
         }

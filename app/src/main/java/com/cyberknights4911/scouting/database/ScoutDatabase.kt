@@ -12,7 +12,7 @@ import androidx.room.RoomDatabase
         Report::class,
         Team::class,
     ],
-    version = 8,
+    version = 1,
     exportSchema = false
 )
 abstract class ScoutDatabase : RoomDatabase() {

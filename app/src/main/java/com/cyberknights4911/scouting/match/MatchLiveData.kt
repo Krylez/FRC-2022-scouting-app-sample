@@ -29,6 +29,13 @@ class MatchWithTeamsLiveData(
             }
         }
     }
+    private val sortOrder = mapOf (
+        "qm" to 1,
+        "ef" to 2,
+        "qf" to 3,
+        "sf" to 4,
+        "f" to 5
+    )
 
     private fun merge() {
         value = matchList.map { match ->
@@ -36,6 +43,7 @@ class MatchWithTeamsLiveData(
                 key = match.tba_key,
                 compLevel = match.compLevel,
                 matchNumber = match.matchNumber,
+                setNumber = match.setNumber,
                 matchTbaKey = match.tba_key,
                 blueTeams = match.blueAllianceKeys.split(",").mapNotNull {
                     teamMap[it]
@@ -44,6 +52,10 @@ class MatchWithTeamsLiveData(
                     teamMap[it]
                 }
             )
-        }
+        }.sortedWith(
+            compareBy<MatchWithTeams> { sortOrder[it.compLevel] }
+                .thenBy { it.matchNumber }
+                .thenBy { it.setNumber }
+        )
     }
 }
