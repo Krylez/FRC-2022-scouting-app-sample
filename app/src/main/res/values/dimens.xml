@@ -1,0 +1,25 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
+
+
+    <dimen name="match_team_size">24sp</dimen>
+    <dimen name="match_number_size">24sp</dimen>
+
+    <dimen name="logo_size">48dp</dimen>
+    <dimen name="start_position_button_size">120dp</dimen>
+    <dimen name="start_position_button_text_size">24sp</dimen>
+    <dimen name="start_position_label_size">32sp</dimen>
+    <dimen name="start_piece_text_size">24sp</dimen>
+    <dimen name="button_auto_start_size">48sp</dimen>
+
+    <dimen name="collect_header_size">32sp</dimen>
+    <dimen name="collect_label_size">24sp</dimen>
+
+    <dimen name="score_header_size">32sp</dimen>
+    <dimen name="score_label_size">24sp</dimen>
+</resources>

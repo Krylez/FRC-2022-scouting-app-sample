@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    tools:context=".autoReport.AutoReportFragment">
+
+    <TextView
+        android:id="@+id/balanceHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/header_balance"
+        android:textSize="@dimen/collect_header_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/balanceHeader">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/engaged"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/start_piece_text_size"
+            android:text="@string/label_balance_engage" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/docked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/start_piece_text_size"
+            android:text="@string/label_balance_dock" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/parked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/start_piece_text_size"
+            android:text="@string/label_balance_park" />
+
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/balanceCancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:text="@string/button_balance_cancel"
+        app:layout_constraintTop_toBottomOf="@id/balance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/balanceOkay" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/balanceOkay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="@string/button_balance_okay"
+        app:layout_constraintStart_toEndOf="@id/balanceCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/balanceCancel"
+        app:layout_constraintBottom_toBottomOf="@id/balanceCancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

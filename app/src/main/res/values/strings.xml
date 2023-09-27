@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Scouting App</string>
+    <string name="title_fetch">Fetch</string>
+
+    <string name="button_start_position_one">One</string>
+    <string name="button_start_position_two">Two</string>
+    <string name="button_start_position_three">Three</string>
+    <string name="button_start_position_four">Four</string>
+
+    <string name="label_start_position">Position:</string>
+    <string name="label_start_piece">Start Piece:</string>
+    <string name="label_start_piece_cone">Cone</string>
+    <string name="label_start_piece_cube">Cube</string>
+    <string name="button_auto_start_done">Done</string>
+
+
+    <string name="label_auto_collect_header">Collection</string>
+    <string name="label_auto_collect">Collecting:</string>
+    <string name="label_collect_count">Count</string>
+    <string name="button_collect">Collect</string>
+    <string name="button_drop">Drop</string>
+
+    <string name="label_score_header">Scoring</string>
+    <string name="label_score_high">High</string>
+    <string name="label_score_mid">Mid</string>
+    <string name="label_score_low">Low</string>
+    <string name="label_score">Total</string>
+    <string name="button_score">Score</string>
+    <string name="button_balance">Balance</string>
+    <string name="header_balance">Balance</string>
+    <string name="button_balance_okay">Okay</string>
+    <string name="button_balance_cancel">Cancel</string>
+    <string name="label_balance_engage">Engaged</string>
+    <string name="label_balance_dock">Docked</string>
+    <string name="label_balance_park">Parked</string>
+</resources>

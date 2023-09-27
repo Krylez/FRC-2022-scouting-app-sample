@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/eventsFragment">
+
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.cyberknights4911.scouting.event.EventsFragment"
+        android:label="fragment_events_list"
+        tools:layout="@layout/fragment_events_list" >
+        <action
+            android:id="@+id/action_eventsFragment_to_matchFragment"
+            app:destination="@id/matchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/matchFragment"
+        android:name="com.cyberknights4911.scouting.match.MatchFragment"
+        android:label="fragment_match_list"
+        tools:layout="@layout/fragment_match_list" >
+        <argument
+            android:name="eventId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_matchFragment_to_teamListDialogFragment"
+            app:destination="@id/teamListDialogFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/autoStartFragment"
+        android:name="com.cyberknights4911.scouting.autostart.AutoStartFragment"
+        android:label="fragment_auto_start"
+        tools:layout="@layout/fragment_auto_start" >
+        <argument
+            android:name="matchId"
+            app:argType="string" />
+        <argument
+            android:name="teamId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_autoStartFragment_to_autoReportFragment"
+            app:destination="@id/autoReportFragment"/>
+    </fragment>
+
+    <dialog
+        android:id="@+id/teamListDialogFragment"
+        android:name="com.cyberknights4911.scouting.team.TeamListDialogFragment"
+        android:label="fragment_team_list_dialog"
+        tools:layout="@layout/fragment_team_list_dialog">
+        <argument
+            android:name="matchId"
+            app:argType="string" />
+        <action
+            android:id="@+id/teamListDialogFragment_to_autoStartFragment"
+            app:destination="@id/autoStartFragment" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/autoReportFragment"
+        android:name="com.cyberknights4911.scouting.autoReport.AutoReportFragment"
+        android:label="fragment_auto_report"
+        tools:layout="@layout/fragment_auto_report" >
+        <argument
+            android:name="reportId"
+            app:argType="long" />
+        <action
+            android:id="@+id/autoReportFragment_to_autoBalanceDialogFragment"
+            app:destination="@id/autoBalanceDialogFragment" />
+        <action
+            android:id="@+id/autoReportFragment_to_teleReportFragment"
+            app:destination="@id/teleReportFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/autoBalanceDialogFragment"
+        android:name="com.cyberknights4911.scouting.autoReport.AutoBalanceDialogFragment"
+        android:label="fragment_balance_dialog"
+        tools:layout="@layout/fragment_auto_balance">
+        <argument
+            android:name="reportId"
+            app:argType="long" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/teleReportFragment"
+        android:name="com.cyberknights4911.scouting.teleReport.TeleReportFragment"
+        android:label="fragment_tele_report"
+        tools:layout="@layout/fragment_tele_report" >
+        <argument
+            android:name="reportId"
+            app:argType="long" />
+        <action
+            android:id="@+id/teleReportFragment_to_teleBalanceDialogFragment"
+            app:destination="@id/teleBalanceDialogFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/teleBalanceDialogFragment"
+        android:name="com.cyberknights4911.scouting.teleReport.TeleBalanceDialogFragment"
+        android:label="fragment_balance_dialog"
+        tools:layout="@layout/fragment_tele_balance">
+        <argument
+            android:name="reportId"
+            app:argType="long" />
+    </dialog>
+</navigation>

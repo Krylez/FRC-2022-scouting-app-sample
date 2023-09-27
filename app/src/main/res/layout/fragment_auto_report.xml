@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    tools:context=".autoReport.AutoReportFragment">
+
+    <TextView
+        android:id="@+id/collectHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/label_auto_collect_header"
+        android:textSize="@dimen/collect_header_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/gamePiece"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/collectHeader">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/gamePieceCone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/start_piece_text_size"
+            android:text="@string/label_start_piece_cone" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/gamePieceCube"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/start_piece_text_size"
+            android:text="@string/label_start_piece_cube" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/collectedConeCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/collect_label_size"
+        app:layout_constraintTop_toTopOf="@id/gamePiece"
+        app:layout_constraintBottom_toTopOf="@id/collectedCubeCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/collectedCubeCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/collect_label_size"
+        app:layout_constraintTop_toBottomOf="@id/collectedConeCount"
+        app:layout_constraintBottom_toBottomOf="@id/gamePiece"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="0" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/collectButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:text="@string/button_collect"
+        app:layout_constraintTop_toBottomOf="@id/gamePiece"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/dropButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dropButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="@string/button_drop"
+        app:layout_constraintStart_toEndOf="@id/collectButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/collectButton"
+        app:layout_constraintBottom_toBottomOf="@id/collectButton" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/collectDivider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/collectButton" />
+
+    <TextView
+        android:id="@+id/scoreHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/label_score_header"
+        android:textSize="@dimen/score_header_size"
+        app:layout_constraintTop_toBottomOf="@id/collectDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/scoreLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scoreHeader">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/scoreHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/start_piece_text_size"
+            android:text="@string/label_score_high" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/scoreMid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/start_piece_text_size"
+            android:text="@string/label_score_mid" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/scoreLow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/start_piece_text_size"
+            android:text="@string/label_score_low" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/scoreCountHigh"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/collect_label_size"
+        app:layout_constraintTop_toTopOf="@id/scoreLevel"
+        app:layout_constraintBottom_toTopOf="@id/scoreCountMid"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/scoreCountMid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/collect_label_size"
+        app:layout_constraintTop_toBottomOf="@id/scoreCountHigh"
+        app:layout_constraintBottom_toTopOf="@id/scoreCountLow"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/scoreCountLow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/collect_label_size"
+        app:layout_constraintTop_toBottomOf="@id/scoreCountMid"
+        app:layout_constraintBottom_toBottomOf="@id/scoreLevel"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="0" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/scoreButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:text="@string/button_score"
+        app:layout_constraintTop_toBottomOf="@id/scoreLevel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".5" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/scoreDivider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scoreButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/balanceButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:text="@string/button_balance"
+        app:layout_constraintTop_toBottomOf="@id/scoreDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".5" />
+
+    <Button
+        android:id="@+id/reportDone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/button_auto_start_size"
+        android:text="@string/button_auto_start_done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
