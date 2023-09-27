@@ -1,5 +1,6 @@
 # Scouting Sample App
 A sample Android FRC scouting app for 2023's Charged Up showcasing a number of technologies.
+![Screen Recording of App.](https://github.com/Krylez/FRC-2023-scouting-app-sample/blob/main/recording.gif)
 
 Everything is written in [kotlin](https://kotlinlang.org/).
 
