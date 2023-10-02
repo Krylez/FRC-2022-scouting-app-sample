@@ -1,5 +1,6 @@
 package com.cyberknights4911.scouting.database
 
+import android.database.Cursor
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
@@ -76,4 +77,10 @@ interface ScoutDatabaseDao {
     @Transaction
     @Query("SELECT * FROM report_table WHERE reportId = :reportId")
     fun getReport(reportId: Long): LiveData<Report>
+
+    /**
+     * Only use in ContentProvider!
+     */
+    @Query("SELECT * FROM report_table")
+    fun geAllReportsCursor(): Cursor
 }
