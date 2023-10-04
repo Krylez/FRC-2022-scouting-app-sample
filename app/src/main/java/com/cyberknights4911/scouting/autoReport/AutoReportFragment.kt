@@ -102,9 +102,7 @@ class AutoReportFragment : Fragment() {
                 val reportId = autoReportViewModel.initialReport.value?.reportId
                 if (reportId != null) {
                     findNavController().navigate(
-                        AutoReportFragmentDirections.autoReportFragmentToAutoBalanceDialogFragment(
-                            reportId
-                        )
+                        AutoReportFragmentDirections.autoReportToAutoBalance(reportId)
                     )
                 } else {
                     Log.e("AutoReportFragment", "No initial reportId found")
@@ -116,9 +114,7 @@ class AutoReportFragment : Fragment() {
                 val reportId = autoReportViewModel.initialReport.value?.reportId
                 if (reportId != null) {
                     findNavController().navigate(
-                        AutoReportFragmentDirections.autoReportFragmentToTeleReportFragment(
-                            reportId
-                        )
+                        AutoReportFragmentDirections.autoReportToTeleReport(reportId)
                     )
                 } else {
                     Log.e("AutoReportFragment", "No initial reportId found")

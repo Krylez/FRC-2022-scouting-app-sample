@@ -103,9 +103,7 @@ class TeleReportFragment : Fragment() {
                 val reportId = teleReportViewModel.initialReport.value?.reportId
                 if (reportId != null) {
                     findNavController().navigate(
-                        TeleReportFragmentDirections.teleReportFragmentToTeleBalanceDialogFragment(
-                            reportId
-                        )
+                        TeleReportFragmentDirections.teleReportToTeleBalance(reportId)
                     )
                 } else {
                     Log.e("TeleReportFragment", "No initial reportId found")

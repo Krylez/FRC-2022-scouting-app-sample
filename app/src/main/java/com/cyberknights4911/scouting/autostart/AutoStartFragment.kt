@@ -51,7 +51,7 @@ class AutoStartFragment : Fragment() {
                 val reportId = autoStartViewModel.initialReport.value?.reportId
                 if (reportId != null) {
                     findNavController().navigate(
-                        AutoStartFragmentDirections.actionAutoStartFragmentToAutoReportFragment(
+                        AutoStartFragmentDirections.autoStartToAutoReport(
                             reportId = reportId
                         )
                     )

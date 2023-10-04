@@ -4,7 +4,6 @@ import android.util.Base64
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.compose.ui.res.colorResource
 import androidx.recyclerview.widget.ListAdapter
 import com.bumptech.glide.RequestManager
 import com.cyberknights4911.scouting.R
@@ -17,7 +16,7 @@ import java.lang.Integer.max
  */
 class TeamAdapter(
     private val requestManager: RequestManager,
-    private val teamListener: TeamListener
+    private val teamListener: (Team) -> Unit
 ) : ListAdapter<TeamWithLogo, TeamAdapter.ViewHolder>(TeamDiffer) {
     var thumbnailMap: Map<String, String> = mapOf()
         set(value) {
@@ -89,7 +88,7 @@ class TeamAdapter(
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int, teamWithLogo: TeamWithLogo) {
             binding.root.setOnClickListener {
-                teamListener.onClick(teamWithLogo)
+                teamListener.invoke(teamWithLogo.team)
             }
             if (!teamWithLogo.logo.isNullOrEmpty()) {
                 requestManager

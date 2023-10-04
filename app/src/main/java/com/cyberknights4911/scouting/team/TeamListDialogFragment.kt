@@ -3,10 +3,11 @@ package com.cyberknights4911.scouting.team
 import android.os.Bundle
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
@@ -35,16 +36,12 @@ class TeamListDialogFragment : BottomSheetDialogFragment() {
 
         val teamAdapter = TeamAdapter(
             Glide.with(this),
-            TeamListener {
-                selectTeam(it.team.tba_key, teamViewModel.matchId)
-            }
+            ::selectTeam
         )
 
         with (binding.root) {
-            if (this is RecyclerView) {
-                layoutManager = GridLayoutManager(context, 2)
-                adapter = teamAdapter
-            }
+            layoutManager = GridLayoutManager(context, 2)
+            adapter = teamAdapter
         }
 
         teamViewModel.redTeams.observe(viewLifecycleOwner) {
@@ -80,11 +77,13 @@ class TeamListDialogFragment : BottomSheetDialogFragment() {
         return binding.root
     }
 
-    private fun selectTeam(teamId: String, matchId: String) {
-        findNavController().navigate(
-            TeamListDialogFragmentDirections.teamListDialogFragmentToAutoStartFragment(
-                teamId = teamId,
-                matchId = matchId
+    private fun selectTeam(team: Team) {
+        findNavController().navigateUp()
+        setFragmentResult(
+            "teamSelect",
+            bundleOf(
+                "teamId" to team.tba_key,
+                "matchId" to teamViewModel.matchId
             )
         )
     }

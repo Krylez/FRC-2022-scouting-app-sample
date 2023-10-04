@@ -39,7 +39,7 @@ class EventsFragment : Fragment() {
                 Log.d("EventsFragment", "Event selected: " + it.name)
 
                 findNavController().navigate(
-                    EventsFragmentDirections.actionEventsFragmentToMatchFragment(it.tba_key)
+                    EventsFragmentDirections.eventsToMatches(it.tba_key)
                 )
             }
         )

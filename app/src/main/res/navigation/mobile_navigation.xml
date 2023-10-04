@@ -11,7 +11,7 @@
         android:label="fragment_events_list"
         tools:layout="@layout/fragment_events_list" >
         <action
-            android:id="@+id/action_eventsFragment_to_matchFragment"
+            android:id="@+id/events_to_matches"
             app:destination="@id/matchFragment" />
     </fragment>
 
@@ -24,8 +24,11 @@
             android:name="eventId"
             app:argType="string" />
         <action
-            android:id="@+id/action_matchFragment_to_teamListDialogFragment"
+            android:id="@+id/matches_to_teams"
             app:destination="@id/teamListDialogFragment" />
+        <action
+            android:id="@+id/matches_to_autoStart"
+            app:destination="@id/autoStartFragment" />
     </fragment>
 
     <fragment
@@ -40,7 +43,7 @@
             android:name="teamId"
             app:argType="string" />
         <action
-            android:id="@+id/action_autoStartFragment_to_autoReportFragment"
+            android:id="@+id/autoStart_to_autoReport"
             app:destination="@id/autoReportFragment"/>
     </fragment>
 
@@ -52,9 +55,6 @@
         <argument
             android:name="matchId"
             app:argType="string" />
-        <action
-            android:id="@+id/teamListDialogFragment_to_autoStartFragment"
-            app:destination="@id/autoStartFragment" />
     </dialog>
 
     <fragment
@@ -66,10 +66,10 @@
             android:name="reportId"
             app:argType="long" />
         <action
-            android:id="@+id/autoReportFragment_to_autoBalanceDialogFragment"
+            android:id="@+id/autoReport_to_autoBalance"
             app:destination="@id/autoBalanceDialogFragment" />
         <action
-            android:id="@+id/autoReportFragment_to_teleReportFragment"
+            android:id="@+id/autoReport_to_teleReport"
             app:destination="@id/teleReportFragment" />
     </fragment>
 
@@ -92,7 +92,7 @@
             android:name="reportId"
             app:argType="long" />
         <action
-            android:id="@+id/teleReportFragment_to_teleBalanceDialogFragment"
+            android:id="@+id/teleReport_to_teleBalance"
             app:destination="@id/teleBalanceDialogFragment" />
     </fragment>
 
