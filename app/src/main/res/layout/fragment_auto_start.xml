@@ -1,137 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="16dp"
-    android:layout_marginBottom="16dp"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    tools:context=".AutoStartFragment">
-
-    <ImageView
-        android:id="@+id/field"
+    android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintDimensionRatio="1696:1894" />
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="?attr/colorPrimary"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="?attr/colorOnPrimary"
+            app:title="@string/title_auto_start"
+            app:layout_collapseMode="pin"
+            app:layout_scrollFlags="scroll|enterAlways"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <Button
-        android:id="@+id/startPosition1"
-        android:layout_width="@dimen/start_position_button_size"
-        android:layout_height="@dimen/start_position_button_size"
-        android:textSize="@dimen/start_position_button_text_size"
-        android:text="@string/button_start_position_one"
-        app:layout_constraintStart_toStartOf="@id/field"
-        app:layout_constraintEnd_toEndOf="@id/field"
-        app:layout_constraintTop_toTopOf="@id/field"
-        app:layout_constraintHorizontal_bias="0.1" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            tools:context=".AutoStartFragment">
 
-    <Button
-        android:id="@+id/startPosition2"
-        android:layout_width="@dimen/start_position_button_size"
-        android:layout_height="@dimen/start_position_button_size"
-        android:textSize="@dimen/start_position_button_text_size"
-        android:text="@string/button_start_position_two"
-        app:layout_constraintStart_toStartOf="@id/field"
-        app:layout_constraintEnd_toEndOf="@id/field"
-        app:layout_constraintTop_toTopOf="@id/field"
-        app:layout_constraintBottom_toTopOf="@id/startPosition3"
-        app:layout_constraintHorizontal_bias="0.7" />
+            <ImageView
+                android:id="@+id/field"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintDimensionRatio="1696:1894" />
 
-    <Button
-        android:id="@+id/startPosition3"
-        android:layout_width="@dimen/start_position_button_size"
-        android:layout_height="@dimen/start_position_button_size"
-        android:textSize="@dimen/start_position_button_text_size"
-        android:text="@string/button_start_position_three"
-        app:layout_constraintStart_toStartOf="@id/field"
-        app:layout_constraintEnd_toEndOf="@id/field"
-        app:layout_constraintTop_toBottomOf="@id/startPosition2"
-        app:layout_constraintBottom_toTopOf="@id/startPosition4"
-        app:layout_constraintHorizontal_bias="0.7" />
+            <Button
+                android:id="@+id/startPosition1"
+                android:layout_width="@dimen/start_position_button_size"
+                android:layout_height="@dimen/start_position_button_size"
+                android:textSize="@dimen/start_position_button_text_size"
+                android:text="@string/button_start_position_one"
+                app:layout_constraintStart_toStartOf="@id/field"
+                app:layout_constraintEnd_toEndOf="@id/field"
+                app:layout_constraintTop_toTopOf="@id/field"
+                app:layout_constraintHorizontal_bias="0.1" />
 
-    <Button
-        android:id="@+id/startPosition4"
-        android:layout_width="@dimen/start_position_button_size"
-        android:layout_height="@dimen/start_position_button_size"
-        android:textSize="@dimen/start_position_button_text_size"
-        android:text="@string/button_start_position_four"
-        app:layout_constraintStart_toStartOf="@id/field"
-        app:layout_constraintEnd_toEndOf="@id/field"
-        app:layout_constraintTop_toBottomOf="@id/startPosition3"
-        app:layout_constraintBottom_toBottomOf="@id/field"
-        app:layout_constraintHorizontal_bias="0.7" />
+            <Button
+                android:id="@+id/startPosition2"
+                android:layout_width="@dimen/start_position_button_size"
+                android:layout_height="@dimen/start_position_button_size"
+                android:textSize="@dimen/start_position_button_text_size"
+                android:text="@string/button_start_position_two"
+                app:layout_constraintStart_toStartOf="@id/field"
+                app:layout_constraintEnd_toEndOf="@id/field"
+                app:layout_constraintTop_toTopOf="@id/field"
+                app:layout_constraintBottom_toTopOf="@id/startPosition3"
+                app:layout_constraintHorizontal_bias="0.7" />
 
-    <TextView
-        android:id="@+id/startPositionLabel"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/label_start_position"
-        android:textSize="@dimen/start_position_label_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/startPositionText"
-        app:layout_constraintTop_toBottomOf="@id/field"
-        app:layout_constraintHorizontal_bias="0.0" />
+            <Button
+                android:id="@+id/startPosition3"
+                android:layout_width="@dimen/start_position_button_size"
+                android:layout_height="@dimen/start_position_button_size"
+                android:textSize="@dimen/start_position_button_text_size"
+                android:text="@string/button_start_position_three"
+                app:layout_constraintStart_toStartOf="@id/field"
+                app:layout_constraintEnd_toEndOf="@id/field"
+                app:layout_constraintTop_toBottomOf="@id/startPosition2"
+                app:layout_constraintBottom_toTopOf="@id/startPosition4"
+                app:layout_constraintHorizontal_bias="0.7" />
 
-    <TextView
-        android:id="@+id/startPositionText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/start_position_label_size"
-        app:layout_constraintStart_toEndOf="@id/startPositionLabel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/field" />
+            <Button
+                android:id="@+id/startPosition4"
+                android:layout_width="@dimen/start_position_button_size"
+                android:layout_height="@dimen/start_position_button_size"
+                android:textSize="@dimen/start_position_button_text_size"
+                android:text="@string/button_start_position_four"
+                app:layout_constraintStart_toStartOf="@id/field"
+                app:layout_constraintEnd_toEndOf="@id/field"
+                app:layout_constraintTop_toBottomOf="@id/startPosition3"
+                app:layout_constraintBottom_toBottomOf="@id/field"
+                app:layout_constraintHorizontal_bias="0.7" />
 
-    <TextView
-        android:id="@+id/startPiece"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/label_start_piece"
-        android:textSize="@dimen/start_piece_text_size"
-        android:layout_marginTop="18dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/startPositionText"
-        app:layout_constraintTop_toBottomOf="@id/startPositionLabel"
-        app:layout_constraintHorizontal_bias="0.0" />
+            <TextView
+                android:id="@+id/startPositionLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_start_position"
+                android:textSize="@dimen/start_position_label_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/startPositionText"
+                app:layout_constraintTop_toBottomOf="@id/field"
+                app:layout_constraintHorizontal_bias="0.0" />
 
-    <RadioGroup
-        android:id="@+id/startPieceSelector"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toEndOf="@id/startPiece"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/startPiece"
-        app:layout_constraintBottom_toBottomOf="@id/startPiece"
-        app:layout_constraintHorizontal_bias="0.0">
+            <TextView
+                android:id="@+id/startPositionText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/start_position_label_size"
+                app:layout_constraintStart_toEndOf="@id/startPositionLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/field" />
 
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/startPieceCone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/start_piece_text_size"
-            android:text="@string/label_start_piece_cone" />
+            <TextView
+                android:id="@+id/startPiece"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/label_start_piece"
+                android:textSize="@dimen/start_piece_text_size"
+                android:layout_marginTop="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/startPositionText"
+                app:layout_constraintTop_toBottomOf="@id/startPositionLabel"
+                app:layout_constraintHorizontal_bias="0.0" />
 
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/startPieceCube"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/start_piece_text_size"
-            android:text="@string/label_start_piece_cube" />
-    </RadioGroup>
+            <RadioGroup
+                android:id="@+id/startPieceSelector"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@id/startPiece"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/startPiece"
+                app:layout_constraintBottom_toBottomOf="@id/startPiece"
+                app:layout_constraintHorizontal_bias="0.0">
 
-    <Button
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/startPieceCone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/start_piece_text_size"
+                    android:text="@string/label_start_piece_cone" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/startPieceCube"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/start_piece_text_size"
+                    android:text="@string/label_start_piece_cube" />
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/autoStartDone"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/button_auto_start_size"
-        android:text="@string/button_auto_start_done"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/check_mark"
+        android:layout_margin="16dp"
+        app:tint="?attr/colorOnPrimary"
+        app:backgroundTint="?attr/colorPrimary" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

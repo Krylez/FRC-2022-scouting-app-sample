@@ -27,7 +27,7 @@
         android:textSize="@dimen/match_number_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/match_level"
-        app:layout_constraintBottom_toTopOf="@id/divider"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:text="Match 3 Set 2" />
 
     <TextView
@@ -53,13 +53,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/match_red_alliance"
         app:layout_constraintEnd_toStartOf="@id/match_level"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         tools:text="all blue teams" />
-
-    <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/match_blue_alliance" />
 </androidx.constraintlayout.widget.ConstraintLayout>

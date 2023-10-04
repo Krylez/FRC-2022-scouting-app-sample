@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Scouting App</string>
-    <string name="title_fetch">Fetch</string>
+    <string name="title_events">Events</string>
+    <string name="title_matches">Matches</string>
+    <string name="title_auto_start">Auto Start</string>
+    <string name="title_auto_report">Auto Report</string>
+    <string name="title_tele_report">Tele Report</string>
 
     <string name="button_start_position_one">One</string>
     <string name="button_start_position_two">Two</string>

@@ -36,8 +36,8 @@ class MatchFragment : Fragment() {
             }
         )
 
-        with (binding.root) {
-            if (this is RecyclerView) {
+        with (binding) {
+            list.apply {
                 layoutManager = LinearLayoutManager(context)
                 adapter = matchAdapter
             }

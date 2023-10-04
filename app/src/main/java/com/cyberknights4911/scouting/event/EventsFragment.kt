@@ -44,10 +44,10 @@ class EventsFragment : Fragment() {
             }
         )
 
-        with (binding.root) {
-            if (this is RecyclerView) {
-                layoutManager = LinearLayoutManager(context)
-                adapter = eventsAdapter
+        with (binding) {
+            list.let {
+                it.layoutManager = LinearLayoutManager(it.context)
+                it.adapter = eventsAdapter
             }
         }
 
