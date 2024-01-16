@@ -8,6 +8,7 @@ import com.cyberknights4911.scouting.BlueAllianceService
 import com.cyberknights4911.scouting.database.Event
 import com.cyberknights4911.scouting.database.ScoutDatabaseDao
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -24,6 +25,9 @@ class EventViewModel @Inject constructor(
     }
 
     val events : LiveData<List<Event>> = databaseDao.getAllEvents()
+
+    val eventsFlow : Flow<List<Event>> = databaseDao.getAllEventsFlow()
+
     private fun fetchEvents() {
         blueAllianceService.districteventList("2023pnw")
             .enqueue(object: Callback<List<EventJson>> {

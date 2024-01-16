@@ -7,6 +7,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ScoutDatabaseDao {
@@ -31,6 +32,9 @@ interface ScoutDatabaseDao {
 
     @Query("SELECT * from event_table")
     fun getAllEvents(): LiveData<List<Event>>
+
+    @Query("SELECT * from event_table")
+    fun getAllEventsFlow(): Flow<List<Event>>
 
     @Query("SELECT * from event_table WHERE tba_key = :key")
     fun getEventByTbaKey(key: String): LiveData<Event>

@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
 
+        <!-- Provider is read-only and the only data exposed is scout reports (no PII) -->
         <provider
             android:name=".provider.ScoutContentProvider"
             android:authorities="com.cyberknights4911.scouting.provider"

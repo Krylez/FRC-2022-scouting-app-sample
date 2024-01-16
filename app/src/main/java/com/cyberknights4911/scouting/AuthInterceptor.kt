@@ -10,7 +10,7 @@ class AuthInterceptor @Inject constructor() : Interceptor {
         return chain.proceed(
             chain.request()
                 .newBuilder()
-                .addHeader("X-TBA-Auth-Key", "GET_YOUR_OWN_TBA_API_KEY_AND_PUT_IT_HERE")
+                .addHeader("X-TBA-Auth-Key", "YOUR_KEY_HERE")
                 .build()
         )
     }
